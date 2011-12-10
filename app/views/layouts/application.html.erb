@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>8-BIT BEER</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>8 BIT BEER</h1>
+      <h2>Let's get drunk!</h2>
+    </header>
+    <div id="content">
+      <%= yield %>
+    </div>
+    <footer></footer>
+  </div>
+  <%= javascript_include_tag "application" %>
+</body>
+
+</html>
