@@ -1,0 +1,198 @@
+.row
+  .spans16
+    %h1 8-BIT BEER Markup Styleguide
+.row.has-top-border
+  .spans4
+    %h2 Typography
+  .spans6
+    %h1 Consectetur Quam
+    %p Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+    
+    %h2 Lorem Ipsum
+    %p Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.
+    
+  .spans6
+    %h2 Magna Etiam Vehicula
+    %p Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+    %h3 Parturient Consectetur Pharetra Ipsum
+    %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero, a pharetra augue. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+
+.row.has-top-border
+  .spans4
+    %h2 Lists
+  .spans4
+    %h3 Unordered List
+    %ul
+      %li List item 1
+      %li List item 2
+      %li List item 3
+  .spans4
+    %h3 Ordered List
+    %ol
+      %li List item 1
+      %li List item 2
+      %li List item 3
+  .spans4
+    %h3 Unstyled List
+    %ul.unstyled
+      %li List item 1
+      %li List item 2
+      %li List item 3
+
+.row.has-top-border
+  .spans4
+    %h2 Table styles
+    %p Default styles for various tables. Use where appropriate
+  .spans12
+    %table
+      %thead
+        %tr
+          %th First Name
+          %th Last name
+          %th Email
+          %th
+      %tbody
+        - 3.times.each do
+          %tr
+            %td Ullamcorper
+            %td Quam
+            %td Malesuada@email.com
+            %td
+              = link_to 'Edit', ''
+              = link_to 'Delete', ''
+
+    %table.dense
+      %thead
+        %tr
+          %th First Name
+          %th Last name
+          %th Email
+          %th
+      %tbody
+        - 3.times.each do
+          %tr
+            %td Ullamcorper
+            %td Quam
+            %td Malesuada@email.com
+            %td
+              = link_to 'Edit', ''
+              = link_to 'Delete', ''
+    
+    %table.unstyled
+      %thead
+        %tr
+          %th First Name
+          %th Last name
+          %th Email
+          %th
+      %tbody
+        - 3.times.each do
+          %tr
+            %td Ullamcorper
+            %td Quam
+            %td Malesuada@email.com
+            %td
+              = link_to 'Edit', ''
+              = link_to 'Delete', ''
+
+.row.has-top-border
+  .spans4
+    %h2 Form Styles
+  .spans6
+    %form
+      %label Default Text Input
+      %input{:type=>'text'}
+      
+      .inline-inputs
+        %span
+          %label Medium Text Input
+          %input.medium{:type=>'text'}
+        %span
+          %label Small Text Input
+          %input.small{:type=>'text'}
+      
+      %label Select Dropdown
+      %select
+        %option Select One
+        %option Select Two
+        %option Select Three
+      
+      %label Textarea
+      %textarea
+      
+      %label
+        %input{:type=>'checkbox'} Standard Checkbox
+      
+      .inline-inputs
+        %span
+          %label Inline Inputs
+          %input.medium{:type=>'text'}
+        %span
+          %label QTY
+          %input.small{:type=>'number'}
+        %input{:type=>'submit', :value=>'Send'}
+
+  .spans6
+    %form
+      .label Input Checkbox List
+      %ul.input-list
+        %li
+          %label
+            %input{:type=>'checkbox'} Checkbox 1
+        %li
+          %label
+            %input{:type=>'checkbox'} Checkbox 2
+        %li
+          %label
+            %input{:type=>'checkbox'} Checkbox 3
+
+      .label Horizontal Input List
+      %ul.inline-input-list
+        %li
+          %label
+            %input{:type=>'checkbox'} Checkbox 1
+        %li
+          %label
+            %input{:type=>'checkbox'} Checkbox 2
+        %li
+          %label
+            %input{:type=>'checkbox'} Checkbox 3
+      
+      .label Input Radio List
+      %ul.input-list
+        %li
+          %label
+            %input{:type=>'radio', :name=>'sample'} Radio 1
+        %li
+          %label
+            %input{:type=>'radio', :name=>'sample'} Radio 2
+        %li                             
+          %label                        
+            %input{:type=>'radio', :name=>'sample'} Radio 3
+      
+      .label Horizontal Input List
+      %ul.inline-input-list
+        %li
+          %label
+            %input{:type=>'radio', :name=>'sample1'} Radio 1
+        %li                             
+          %label                        
+            %input{:type=>'radio', :name=>'sample1'} Radio 2
+        %li                             
+          %label                        
+            %input{:type=>'radio', :name=>'sample1'} Radio 3
+
+.row.has-top-border
+  .spans4
+    %h2 Buttons
+  .spans6
+    .label Link Buttons
+    = link_to 'Default', '', :class=>'button'
+    = link_to 'Callout', '', :class=>'callout button'
+    = link_to 'Alternate', '', :class=>'alt button'
+  .spans6
+    .label Form Buttons
+    %div
+      %input{:type=>'submit', :value=>'Default'}
+      %input.callout{:type=>'submit', :value=>'Callout'}
+      %input.alt{:type=>'submit', :value=>'Alternate'}

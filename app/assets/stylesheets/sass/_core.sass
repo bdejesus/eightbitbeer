@@ -2,6 +2,40 @@
 $light: 300
 $regular: 400
 $bold: 600
+$black: 900
 
 // Colors
 $accent: orange
+
+// Mixins
+@mixin transition($params)
+  -moz-transition: $params
+  -webkit-transition: $params
+  -ms-transform: $params
+  transition: $params
+@mixin transform($params)
+  -moz-transition: $params
+  -webkit-transition: $params
+  -ms-transform: $params
+  transform: $params
+@mixin box-shadow($params)
+  -moz-box-shadow: $params
+  -webkit-box-shadow: $params
+  -ms-box-shadow: $params
+  box-shadow: $params
+@mixin border-radius($radius)
+  -moz-border-radius: $radius
+  -webkit-border-radius: $radius
+  -ms-border-radius: $radius
+@mixin gradient ($top, $bottom)
+  background-image: -moz-linear-gradient(top, $top, $bottom)
+  background-image: -webkit-gradient(linear, left top, left bottom, from($top), to($bottom))
+@mixin gradient-stop ($top, $tstop, $bottom, $bstop)
+  background-image: -moz-linear-gradient(top, $top $tstop, $bottom $bstop)
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop($tstop, $top), color-stop($bstop, $bottom))
+@mixin disable-selection
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -o-user-select: none
+  user-select: none

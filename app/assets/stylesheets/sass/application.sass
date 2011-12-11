@@ -1,22 +1,169 @@
-@import "core.sass"
-@import "normalize.sass"
+@import "_core.sass"
+@import "_normalize.sass"
+@import "_grid.sass"
 
+// Base
 body
-  background-color:  #F4F4F4
-  color: #636363
-  font-size: 75%
+  background-color: #F4F4F4
+  color: #333
+  font-size: 90%
+  font-weight: $light
+  padding: 20px
 .container
-  margin: 20px auto
-  width: 960px
-
+  font-size: 1em
+  line-height: 1.5em
+  margin: 0 auto
+  max-width: 1060px
 // Typography
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
   font-weight:  $light
-  margin: 0
-h1, .h1
-h2, .h2
-h3, .h3
-h4, .h4
-h5, .h5
-h6, .h6
-p, address
+
+// Links
+a
+  @include transition(all 0.2s linear)
+  &:link, &:visited
+    color: #369
+    text-decoration: none
+    opacity: 0.8
+  &:hover
+    opacity: 1
+  &:active
+
+// Layout
+header
+  background: #333
+  color: #F4F4F4
+  padding: 5px
+  h1
+    font-weight: $black
+    margin: 0 0 0.25em
+  h2
+    margin: 0
+#content
+  padding: 20px 0px
+
+// Tables
+table
+  margin: 1em 0
+  width: 100%
+  thead
+    background: #333
+    color: #F4F4F4
+  tbody tr
+    @include transition(background-color 0.15s linear)
+    &:hover
+      background: #EEE
+  th
+    font-weight: $regular
+    text-align: left
+  th, td
+    padding: 6px 5px
+    &:last-child
+      text-align: right
+  td
+    border-bottom: 1px solid #EEE
+    @include gradient-stop(rgba(255,255,255,1), 1%, rgba(255,255,255,0), 2%)
+  // Dense table
+  &.dense
+    th, td
+      padding: 2px 5px
+  // Unstyled Table
+  &.unstyled
+    width: auto
+    thead
+      background:  none
+      color: inherit
+    tbody tr:hover
+      background: inherit
+    th, td
+      border: none
+      padding: 0
+      text-align: left
+
+// Lists
+ul, ol
+  padding-left: 1.5em
+  &.unstyled
+    list-style: none
+    padding-left: 0
+// Forms
+form
+  margin: 1em 0
+label, .label
+  display: block
+  margin-top: 0.5em
+  @include disable-selection
+input, textarea
+  width: 240px
+  &.small
+    width: 60px
+  &.medium
+    width: 120px
+input
+  &[type="checkbox"], &[type="radio"], &[type="submit"], &[type="button"]
+    height: auto
+    width: auto
+  &[type="checkbox"], &[type="radio"]
+    margin-right: 5px
+textarea, input[type="text"], input[type="email"], input[type="url"], input[type="number"], select
+  background: #FFF
+  border: 1px solid #DFDFDF
+  padding: 5px
+  @include transition(border-color 0.15s linear)
+  &:focus
+    border-color: #333
+    outline: none
+
+textarea
+  min-height: 4.2em
+.input-list, .inline-input-list
+  padding-left: 0
+  list-style: none
+.input-list
+  li:first-child
+    margin-top: 0
+.inline-input-list
+  li
+    display: inline-block
+    margin-right: 1.5em
+  label
+    margin-top: 0
+.label
+  + .inline-input-list, + .input-list
+    margin-top: 0
+.inline-inputs
+  > span
+    display: inline-block
+  input
+    margin-right: 5px
+  input[type="submit"], input[type="button"], button
+    margin: 0 0 0 3px
+    vertical-align: bottom
+      
+
+// Buttons
+input[type="button"], input[type="submit"], button
+  height: 28px
+.button:link, .button:visited, button, input[type="button"], input[type="submit"]
+  display: inline-block
+  padding: 6px 20px 10px
+  text-align: center
+  background: #333
+  color: #FFF
+  border: none
+  opacity: 0.9
+  font-weight: $regular
+  @include box-shadow((inset 1px 1px 0px rgba(255,255,255,0.5), inset -1px -1px 0px #000))
+  @include transition(all 0.15s linear)
+  vertical-align: baseline
+  margin: 0.2em 0
+  line-height: 1em
+  &:hover
+    opacity: 1
+
+
+// Misc
+.clear
+  display: block
+  clear: both
+  float: none
