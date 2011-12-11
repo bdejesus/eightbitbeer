@@ -60,6 +60,4 @@ Eightbitbeer::Application.configure do
   
   config.sass.line_comments = false
   config.sass.syntax = :nested
-  
-  RAILS_ENV=production bundle exec rake assets:precompile
 end
