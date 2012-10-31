@@ -21,6 +21,8 @@ Eightbitbeer::Application.configure do
   config.assets.digest = true
   config.assets.initialize_on_precompile = false
 
+  config.action_mailer.default_url_options = { :host => '8bitbrewing.co' }
+
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
