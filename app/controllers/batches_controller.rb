@@ -1,4 +1,6 @@
 class BatchesController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
+  
   # GET /batches
   # GET /batches.json
   def index
