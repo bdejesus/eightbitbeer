@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Batch:
+  = @log_entry.batch_id
+%p
+  %b Step:
+  = @log_entry.step
+%p
+  %b Date:
+  = @log_entry.date
+%p
+  %b Gravity:
+  = @log_entry.gravity
+%p
+  %b Temperature:
+  = @log_entry.temperature
+%p
+  %b Notes:
+  = @log_entry.notes
+
+= link_to 'Edit', edit_log_entry_path(@log_entry)
+\|
+= link_to 'Back', log_entries_path

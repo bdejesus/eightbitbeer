@@ -1,0 +1,28 @@
+= form_for @step do |f|
+  -if @step.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@step.errors.count, "error")} prohibited this step from being saved:"
+      %ul
+        - @step.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :recipe_id
+    = f.text_field :recipe_id
+  .field
+    = f.label :name
+    = f.text_area :name
+  .field
+    = f.label :amount
+    = f.text_field :amount
+  .field
+    = f.label :time
+    = f.time_select :time
+  .field
+    = f.label :notes
+    = f.text_area :notes
+  .field
+    = f.label :temperature
+    = f.text_field :temperature
+  .actions
+    = f.submit 'Save'

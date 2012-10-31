@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Step:
+  = @ingredient.step_id
+%p
+  %b Type:
+  = @ingredient.type
+%p
+  %b Name:
+  = @ingredient.name
+%p
+  %b Notes:
+  = @ingredient.notes
+
+= link_to 'Edit', edit_ingredient_path(@ingredient)
+\|
+= link_to 'Back', ingredients_path

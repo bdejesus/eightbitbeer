@@ -1,0 +1,25 @@
+%h1 Ingredients
+
+%table
+  %tr
+    %th Step
+    %th Type
+    %th Name
+    %th Notes
+    %th
+    %th
+    %th
+
+  - @ingredients.each do |ingredient|
+    %tr
+      %td= ingredient.step_id
+      %td= ingredient.type
+      %td= ingredient.name
+      %td= ingredient.notes
+      %td= link_to 'Show', ingredient
+      %td= link_to 'Edit', edit_ingredient_path(ingredient)
+      %td= link_to 'Destroy', ingredient, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Ingredient', new_ingredient_path

@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Recipe:
+  = @batch.recipe_id
+%p
+  %b Abv:
+  = @batch.abv
+%p
+  %b Notes:
+  = @batch.notes
+%p
+  %b Rating:
+  = @batch.rating
+%p
+  %b Starred:
+  = @batch.starred
+%p
+  %b Starting gravity:
+  = @batch.starting_gravity
+
+= link_to 'Edit', edit_batch_path(@batch)
+\|
+= link_to 'Back', batches_path

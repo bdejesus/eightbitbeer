@@ -1,0 +1,29 @@
+%h1 Recipes
+
+%table
+  %tr
+    %th Name
+    %th Style
+    %th Description
+    %th Abv
+    %th Batch size
+    %th Notes
+    %th
+    %th
+    %th
+
+  - @recipes.each do |recipe|
+    %tr
+      %td= recipe.name
+      %td= recipe.style
+      %td= recipe.description
+      %td= recipe.abv
+      %td= recipe.batch_size
+      %td= recipe.notes
+      %td= link_to 'Show', recipe
+      %td= link_to 'Edit', edit_recipe_path(recipe)
+      %td= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Recipe', new_recipe_path

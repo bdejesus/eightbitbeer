@@ -1,0 +1,29 @@
+%h1 Listing steps
+
+%table
+  %tr
+    %th Recipe
+    %th Name
+    %th Amount
+    %th Time
+    %th Notes
+    %th Temperature
+    %th
+    %th
+    %th
+
+  - @steps.each do |step|
+    %tr
+      %td= step.recipe_id
+      %td= step.name
+      %td= step.amount
+      %td= step.time
+      %td= step.notes
+      %td= step.temperature
+      %td= link_to 'Show', step
+      %td= link_to 'Edit', edit_step_path(step)
+      %td= link_to 'Destroy', step, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Step', new_step_path

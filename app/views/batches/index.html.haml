@@ -1,0 +1,29 @@
+%h1 Batches
+
+%table
+  %tr
+    %th Recipe
+    %th Abv
+    %th Notes
+    %th Rating
+    %th Starred
+    %th Starting gravity
+    %th
+    %th
+    %th
+
+  - @batches.each do |batch|
+    %tr
+      %td= batch.recipe_id
+      %td= batch.abv
+      %td= batch.notes
+      %td= batch.rating
+      %td= batch.starred
+      %td= batch.starting_gravity
+      %td= link_to 'Show', batch
+      %td= link_to 'Edit', edit_batch_path(batch)
+      %td= link_to 'Destroy', batch, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Batch', new_batch_path

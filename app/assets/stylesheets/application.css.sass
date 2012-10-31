@@ -38,6 +38,8 @@ header
     padding: 5px
   h2
     margin: 0
+  a:link, a:visited
+    color: #FFF
 #content
   padding: 20px 0px
 
@@ -45,14 +47,13 @@ header
 table
   margin: 1em 0
   width: 100%
-  thead
-    background: #333
-    color: #F4F4F4
   tbody tr
     @include transition(background-color 0.15s linear)
     &:hover
       background: #EEE
   th
+    background: #333
+    color: #F4F4F4
     font-weight: $regular
     text-align: left
   th, td
