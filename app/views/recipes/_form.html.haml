@@ -1,6 +1,6 @@
 = form_for @recipe do |f|
   -if @recipe.errors.any?
-    #error_explanation
+    .error
       %h2= "#{pluralize(@recipe.errors.count, "error")} prohibited this recipe from being saved:"
       %ul
         - @recipe.errors.full_messages.each do |msg|
@@ -12,6 +12,9 @@
   .field
     = f.label :style
     = f.text_field :style
+  .field
+    = f.label :type
+    = f.text_field :type
   .field
     = f.label :description
     = f.text_area :description

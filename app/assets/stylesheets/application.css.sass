@@ -3,14 +3,14 @@
 
 // Base
 body
-  background-color: #FEFEFE
+  background-color: #EEE
   color: #333
   font-size: 90%
   font-weight: $regular
   padding: 0
 .container
   font-size: 1em
-  line-height: 1.5em
+  line-height: $line-height
   margin: 0 auto
 // Typography
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
@@ -27,63 +27,12 @@ a
   &:active
 
 // Layout
-header
-  h1
-    font-weight: $black
-    margin: 0
-    background: #333
-    color: #FE7612
-    padding: 30px 40px
-    a:link, a:visited
-      color: #FE7612
 
-  h2
-    margin: 0
-  nav
-    background: #444
-    padding: 10px 40px
-    text-align: right
-  a:link, a:visited
-    color: #FFF
 #content
+  background: #FEFEFE
   padding: 20px 40px
 
-// Tables
-table
-  margin: 1em 0
-  width: 100%
-  tbody tr
-    @include transition(background-color 0.1s linear)
-    &:hover
-      background: #EEE
-  th
-    background: #333
-    color: #F4F4F4
-    font-weight: $regular
-    text-align: left
-  th, td
-    padding: 6px 5px
-    &:last-child
-      text-align: right
-  td
-    border-bottom: 1px solid #EEE
-    @include gradient-stop(rgba(255,255,255,1), 1%, rgba(255,255,255,0), 2%)
-  // Dense table
-  &.dense
-    th, td
-      padding: 2px 5px
-  // Unstyled Table
-  &.unstyled
-    width: auto
-    thead
-      background:  none
-      color: inherit
-    tbody tr:hover
-      background: inherit
-    th, td
-      border: none
-      padding: 0
-      text-align: left
+
 
 // Lists
 ul, ol
@@ -91,59 +40,10 @@ ul, ol
   &.unstyled
     list-style: none
     padding-left: 0
-// Forms
-form
-  margin: 1em 0
-label, .label
-  display: block
-  margin-top: 0.5em
-  @include disable-selection
-input, textarea
-  width: 240px
-  &.small
-    width: 60px
-  &.medium
-    width: 120px
-input
-  &[type="checkbox"], &[type="radio"], &[type="submit"], &[type="button"]
-    height: auto
-    width: auto
-  &[type="checkbox"], &[type="radio"]
-    margin-right: 5px
-textarea, input[type="text"], input[type="email"], input[type="url"], input[type="number"], input[type="password"], select
-  background: #FFF
-  border: 1px solid #DFDFDF
-  padding: 5px
-  @include transition(border-color 0.1s linear)
-  &:focus
-    border-color: #333
-    outline: none
+ul
+  list-style: square
+  
 
-textarea
-  min-height: 4.2em
-.input-list, .inline-input-list
-  padding-left: 0
-  list-style: none
-.input-list
-  li:first-child
-    margin-top: 0
-.inline-input-list
-  li
-    display: inline-block
-    margin-right: 1.5em
-  label
-    margin-top: 0
-.label
-  + .inline-input-list, + .input-list
-    margin-top: 0
-.inline-inputs
-  > span
-    display: inline-block
-  input
-    margin-right: 5px
-  input[type="submit"], input[type="button"], button
-    margin: 0 0 0 3px
-    vertical-align: bottom
       
 
 // Buttons
@@ -176,3 +76,14 @@ button, input[type="button"], input[type="submit"]
   display: block
   clear: both
   float: none
+.nowrap
+  white-space: nowrap
+.align-right
+  text-align: right
+.align-left
+  text-align: left
+.align-center
+  text-align: center
+
+.dev
+  padding: 20px 40px

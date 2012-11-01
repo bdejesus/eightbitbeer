@@ -1,29 +1,29 @@
 %h1 Recipes
 
-%table
-  %tr
-    %th Name
-    %th Style
-    %th Description
-    %th Abv
-    %th Batch size
-    %th Notes
-    %th
-    %th
-    %th
+- unless @recipes.empty?
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Style
+        %th ABV
+        %th Yield
+        %th Description
+        
+        %th
 
-  - @recipes.each do |recipe|
-    %tr
-      %td= recipe.name
-      %td= recipe.style
-      %td= recipe.description
-      %td= recipe.abv
-      %td= recipe.batch_size
-      %td= recipe.notes
-      %td= link_to 'Show', recipe
-      %td= link_to 'Edit', edit_recipe_path(recipe)
-      %td= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete
+    - @recipes.each do |recipe|
+      %tbody
+        %tr
+          %td= link_to recipe.name, recipe
+          %td= recipe.style
+          %td= recipe.abv
+          %td= recipe.batch_size
+          %td= recipe.description
 
-%br
-
-= link_to 'New Recipe', new_recipe_path
+          %td.nowrap
+            = link_to 'Edit', edit_recipe_path(recipe)
+            |
+            = link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete
+- else
+  %p You have no recipes. <a href="#{new_recipe_path}">Create a new one!</a>

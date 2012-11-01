@@ -1,24 +1,28 @@
-%p#notice= notice
+.row
+  .spans2.align-right
+    %strong Name
+  .spans14= @recipe.name
 
-%p
-  %b Name:
-  = @recipe.name
-%p
-  %b Style:
-  = @recipe.style
-%p
-  %b Description:
-  = @recipe.description
-%p
-  %b Abv:
-  = @recipe.abv
-%p
-  %b Batch size:
-  = @recipe.batch_size
-%p
-  %b Notes:
-  = @recipe.notes
+.row
+  .spans2.align-right
+    %strong Style
+  .spans14= @recipe.style
+.row
+  .spans2.align-right
+    %strong Description:
+  .spans14= @recipe.description
+.row
+  .spans2.align-right
+    %strong Abv:
+  .spans14= @recipe.abv
+.row
+  .spans2.align-right
+    %strong Batch size:
+  .spans14= @recipe.batch_size
+.row
+  .spans2.align-right
+    %strong Notes:
+  .spans14= @recipe.notes
 
-= link_to 'Edit', edit_recipe_path(@recipe)
-\|
-= link_to 'Back', recipes_path
+.row
+  .spans14.offset2= link_to 'Edit', edit_recipe_path(@recipe), class: 'button'

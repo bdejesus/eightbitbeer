@@ -1,0 +1,25 @@
+%header
+  .inner-content
+    %h1= link_to '8-BIT BEER', root_path
+    %nav
+      - if signed_in?
+        %ul.action-nav
+          %li
+            = link_to '+', new_recipe_path
+            = link_to 'Recipes', recipes_path
+          %li
+            = link_to '+', new_batch_path
+            = link_to 'Batches', batches_path
+          %li
+            = link_to '+', new_ingredient_path
+            = link_to 'Ingredients', ingredients_path
+
+          - if brewmeister_signed_in?
+            %li= link_to 'Brewers', ''
+            %li= link_to 'Admin', ''
+
+      %ul.user-nav
+        - if signed_in?
+          %li= link_to 'Logout', destroy_brewmeister_session_path, :method => 'delete'
+        - elsif where_i_am != new_brewmeister_session_path
+          %li= link_to 'Login', new_brewmeister_session_path

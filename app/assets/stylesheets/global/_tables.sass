@@ -1,1 +1,42 @@
-_tables.sass
+// Tables
+table
+  margin: 1em 0
+  width: 100%
+  font-size: 0.9em
+  line-height: $line-height
+  tbody tr
+    @include transition(background-color 0.1s linear)
+    &:hover
+      background: #F9F9F9
+  th
+    background: #333
+    color: #F4F4F4
+    font-weight: $regular
+    text-align: left
+    white-space: nowrap
+    padding: 6px 10px
+  th, td
+    vertical-align: top
+    min-width: 60px
+    &:last-child
+      text-align: right
+  td
+    padding: 10px
+    border-bottom: 1px solid #EEE
+    @include gradient-stop(rgba(255,255,255,1), 1%, rgba(255,255,255,0), 2%)
+  // Dense table
+  &.dense
+    th, td
+      padding: 2px 5px
+  // Unstyled Table
+  &.unstyled
+    width: auto
+    thead
+      background:  none
+      color: inherit
+    tbody tr:hover
+      background: inherit
+    th, td
+      border: none
+      padding: 0
+      text-align: left

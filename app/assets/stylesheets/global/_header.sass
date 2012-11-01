@@ -1,0 +1,29 @@
+@import mixins
+
+header
+  h1
+    font-weight: $black
+    margin: 0
+    background: #333
+    color: #FE7612
+    padding: 30px 40px
+    a:link, a:visited
+      color: #FE7612
+  h2
+    margin: 0
+  a:link, a:visited
+    color: #FFF
+  nav
+    background: #444
+    padding: 10px 40px
+    height: $line-height
+    > ul, > ul > li
+      padding: 0
+      margin: 0
+      display: inline-block
+    > ul > li
+      margin-right: 20px
+.action-nav
+  float: left
+.user-nav
+  float: right

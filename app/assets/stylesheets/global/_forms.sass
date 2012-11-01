@@ -1,1 +1,55 @@
-_forms.sass
+// Forms
+form
+  margin: 1em 0
+label, .label
+  font-weight: $bold
+  color: #999
+  display: block
+  margin-top: 0.5em
+  @include disable-selection
+input, textarea
+  width: 240px
+  &.small
+    width: 60px
+  &.medium
+    width: 120px
+input
+  &[type="checkbox"], &[type="radio"], &[type="submit"], &[type="button"]
+    height: auto
+    width: auto
+  &[type="checkbox"], &[type="radio"]
+    margin-right: 5px
+textarea, input[type="text"], input[type="email"], input[type="url"], input[type="number"], input[type="password"], select
+  background: #FFF
+  border: 1px solid #DFDFDF
+  padding: 5px
+  @include transition(border-color 0.1s linear)
+  &:focus
+    border-color: #333
+    outline: none
+
+textarea
+  height: 8.4em
+.input-list, .inline-input-list
+  padding-left: 0
+  list-style: none
+.input-list
+  li:first-child
+    margin-top: 0
+.inline-input-list
+  li
+    display: inline-block
+    margin-right: 1.5em
+  label
+    margin-top: 0
+.label
+  + .inline-input-list, + .input-list
+    margin-top: 0
+.inline-inputs
+  > span
+    display: inline-block
+  input
+    margin-right: 5px
+  input[type="submit"], input[type="button"], button
+    margin: 0 0 0 3px
+    vertical-align: bottom
