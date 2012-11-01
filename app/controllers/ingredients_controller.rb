@@ -1,5 +1,6 @@
 class IngredientsController < ApplicationController
   before_filter :authenticate_brewer!, except: [:index, :show]
+  before_filter :authenticate_brewmeister!, except: [:index, :show]
   
   # GET /ingredients
   # GET /ingredients.json

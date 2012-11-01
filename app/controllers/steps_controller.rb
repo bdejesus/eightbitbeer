@@ -1,6 +1,7 @@
 class StepsController < ApplicationController
-  # GET /steps
-  # GET /steps.json
+  before_filter :authenticate_brewer!, except: [:index, :show]
+  before_filter :authenticate_brewmeister!, except: [:index, :show]
+  
   def index
     @steps = Step.all
 
