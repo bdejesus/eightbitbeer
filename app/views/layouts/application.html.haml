@@ -9,19 +9,20 @@
   %body
     .container
       %header
-        %h1= link_to '8-BIT BEER', root_path
-        %nav
-          - if brewer_signed_in? || brewmeister_signed_in?
-            = link_to 'Logout', destroy_brewmeister_session_path, :method => 'delete'
-          - elsif where_i_am != new_brewmeister_session_path
-            = link_to 'Login', new_brewmeister_session_path
-          
+        .inner-content
+          %h1= link_to '8-BIT BEER', root_path
+          %nav
+            - if brewer_signed_in? || brewmeister_signed_in?
+              = link_to 'Logout', destroy_brewmeister_session_path, :method => 'delete'
+            - elsif where_i_am != new_brewmeister_session_path
+              = link_to 'Login', new_brewmeister_session_path
+      
+      .system
+        - if notice
+          .notice= notice
+        - if alert
+          .alert= alert
       #content
-        - if notice || alert
-          .message
-            .notice= notice
-            .alert= alert
-          
         = yield
 
       %footer
@@ -32,5 +33,4 @@
     - if Rails.env == 'development'
       .clear
       .dev
-
         = params.inspect

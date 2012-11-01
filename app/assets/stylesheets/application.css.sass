@@ -3,54 +3,54 @@
 
 // Base
 body
-  background-color: #F4F4F4
+  background-color: #FEFEFE
   color: #333
   font-size: 90%
   font-weight: $regular
-  padding: 20px
+  padding: 0
 .container
   font-size: 1em
   line-height: 1.5em
   margin: 0 auto
-  max-width: 1060px
 // Typography
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
   font-weight:  $light
 
 // Links
 a
-  @include transition(all 0.2s linear)
+  @include transition(all 0.1s linear)
   &:link, &:visited
     color: #369
     text-decoration: none
-    opacity: 0.8
   &:hover
-    opacity: 1
+    text-decoration: underline
   &:active
 
 // Layout
 header
   h1
     font-weight: $black
-    margin: 0 0 0.25em
+    margin: 0
     background: #333
-    color: #F4F4F4
-    padding: 5px
+    color: #FFF
+    padding: 30px 40px
   h2
     margin: 0
+  nav
+    background: #444
+    padding: 10px 40px
+    text-align: right
   a:link, a:visited
     color: #FFF
-  nav
-    background: #666
 #content
-  padding: 20px 0px
+  padding: 20px 40px
 
 // Tables
 table
   margin: 1em 0
   width: 100%
   tbody tr
-    @include transition(background-color 0.15s linear)
+    @include transition(background-color 0.1s linear)
     &:hover
       background: #EEE
   th
@@ -111,7 +111,7 @@ textarea, input[type="text"], input[type="email"], input[type="url"], input[type
   background: #FFF
   border: 1px solid #DFDFDF
   padding: 5px
-  @include transition(border-color 0.15s linear)
+  @include transition(border-color 0.1s linear)
   &:focus
     border-color: #333
     outline: none
@@ -156,7 +156,7 @@ input[type="button"], input[type="submit"], button
   opacity: 0.9
   font-weight: $regular
   @include box-shadow((inset 1px 1px 0px rgba(255,255,255,0.5), inset -1px -1px 0px #000))
-  @include transition(all 0.15s linear)
+  @include transition(all 0.1s linear)
   vertical-align: baseline
   margin: 0.2em 0
   line-height: 1.2em
