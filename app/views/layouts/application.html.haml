@@ -13,10 +13,9 @@
         %nav
           - if brewer_signed_in? || brewmeister_signed_in?
             = link_to 'Logout', destroy_brewmeister_session_path, :method => 'delete'
-          - else
+          - elsif where_i_am != new_brewmeister_session_path
             = link_to 'Login', new_brewmeister_session_path
           
-       
       #content
         - if notice || alert
           .message
@@ -29,3 +28,9 @@
     
     .clear
     = javascript_include_tag 'application'
+
+    - if Rails.env == 'development'
+      .clear
+      .dev
+
+        = params.inspect

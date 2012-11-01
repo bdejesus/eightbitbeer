@@ -107,7 +107,7 @@ input
     width: auto
   &[type="checkbox"], &[type="radio"]
     margin-right: 5px
-textarea, input[type="text"], input[type="email"], input[type="url"], input[type="number"], select
+textarea, input[type="text"], input[type="email"], input[type="url"], input[type="number"], input[type="password"], select
   background: #FFF
   border: 1px solid #DFDFDF
   padding: 5px
@@ -165,7 +165,8 @@ input[type="button"], input[type="submit"], button
 button, input[type="button"], input[type="submit"]
   height: 30px
   padding: 0 20px
-
+.clear + input[type="button"], input[type="submit"], button
+  margin-top: 14px
 
 // Misc
 .clear
