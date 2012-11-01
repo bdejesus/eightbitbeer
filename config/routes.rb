@@ -1,6 +1,6 @@
 Eightbitbeer::Application.routes.draw do
 
-  devise_for  :users,
+  devise_for  :brewers,
               :admins
               
   resources :ingredients,
@@ -11,7 +11,5 @@ Eightbitbeer::Application.routes.draw do
 
   resource :styleguide
   root :to => 'home#index'
-
-
 
 end
