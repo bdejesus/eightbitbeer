@@ -1,7 +1,7 @@
 Eightbitbeer::Application.routes.draw do
 
   devise_for  :brewers,
-              :admins
+              :brewmeisters
               
   resources :ingredients,
             :steps,
