@@ -81,15 +81,16 @@ ActiveRecord::Schema.define(:version => 20121101025114) do
     t.float    "abv"
     t.float    "batch_size"
     t.text     "notes"
+    t.text     "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "steps", :force => true do |t|
     t.integer  "recipe_id"
-    t.text     "name"
+    t.text     "type"
     t.float    "amount"
-    t.time     "time"
+    t.time     "duration"
     t.text     "notes"
     t.float    "temperature"
     t.datetime "created_at"
