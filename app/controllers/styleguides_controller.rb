@@ -1,6 +1,5 @@
 class StyleguidesController < ApplicationController
-  before_filter :authenticate_brewer!,
-                :authenticate_brewmeister!
+  before_filter :authenticate_brewmeister!
 
   def show
   end
