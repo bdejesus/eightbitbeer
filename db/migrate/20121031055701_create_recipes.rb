@@ -7,6 +7,7 @@ class CreateRecipes < ActiveRecord::Migration
       t.float :abv
       t.float :batch_size
       t.text :notes
+      t.text :type
 
       t.timestamps
     end
