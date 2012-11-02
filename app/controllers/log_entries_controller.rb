@@ -1,5 +1,5 @@
 class LogEntriesController < ApplicationController
-  before_filter :authenticate_brewmeister!
+  before_filter :authenticate_brewer!
 
   # GET /log_entries
   # GET /log_entries.json

@@ -1,7 +1,6 @@
 Eightbitbeer::Application.routes.draw do
 
-  devise_for  :brewers
-  devise_for  :brewmeisters, :path_names => { :sign_in => 'login', :sign_out => 'logout'}
+  devise_for  :brewers, :path_names => { :sign_in => 'login', :sign_out => 'logout'}
               
   resources :ingredients,
             :steps,

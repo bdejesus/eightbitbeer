@@ -22,7 +22,5 @@
     .clear
     = javascript_include_tag 'application'
 
-    - if Rails.env == 'development'
-      .clear
-      .dev
-        = params.inspect
+    - if current_brewer.is_admin?
+      = render '/layouts/dev'

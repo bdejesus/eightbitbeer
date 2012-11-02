@@ -1,5 +1,5 @@
 class StepsController < ApplicationController
-  before_filter :authenticate_brewmeister!, except: [:index, :show]
+  before_filter :authenticate_brewer!, except: [:index, :show]
   
   def index
     @steps = Step.all

@@ -7,7 +7,8 @@ task :bootstrap => [:environment, 'db:reset', 'db:schema:load'] do
   email = 'dejesus.ben@gmail.com'
   password = 'password'
   
-  Brewmeister.create!(email: email, password: password, password_confirmation: password)
+  Brewer.create!(email: email, password: password, password_confirmation: password)
+  Brewer.create!(email: 'test@test.com', password: password, password_confirmation: password)
   
   puts "Done!"
 end

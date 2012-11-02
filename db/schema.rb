@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121101025114) do
+ActiveRecord::Schema.define(:version => 20121101020526) do
 
   create_table "batches", :force => true do |t|
     t.integer  "recipe_id"
@@ -41,18 +41,6 @@ ActiveRecord::Schema.define(:version => 20121101025114) do
 
   add_index "brewers", ["email"], :name => "index_brewers_on_email", :unique => true
   add_index "brewers", ["reset_password_token"], :name => "index_brewers_on_reset_password_token", :unique => true
-
-  create_table "brewmeisters", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "brewmeisters", ["email"], :name => "index_brewmeisters_on_email", :unique => true
-  add_index "brewmeisters", ["reset_password_token"], :name => "index_brewmeisters_on_reset_password_token", :unique => true
 
   create_table "ingredients", :force => true do |t|
     t.integer  "step_id"
