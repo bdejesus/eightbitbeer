@@ -1,6 +1,6 @@
 = form_for @recipe do |f|
   -if @recipe.errors.any?
-    .error
+    #error
       %h2= "#{pluralize(@recipe.errors.count, "error")} prohibited this recipe from being saved:"
       %ul
         - @recipe.errors.full_messages.each do |msg|

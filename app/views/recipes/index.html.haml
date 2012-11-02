@@ -1,5 +1,7 @@
 %h1 Recipes
 
+= link_to 'Create a new Recipe', new_recipe_path, class: 'button'
+
 - unless @recipes.empty?
   %table
     %thead

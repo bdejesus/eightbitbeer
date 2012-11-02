@@ -22,5 +22,5 @@
     .clear
     = javascript_include_tag 'application'
 
-    - if current_brewer.is_admin?
+    - if brewer_signed_in? and current_brewer.is_admin?
       = render '/layouts/dev'

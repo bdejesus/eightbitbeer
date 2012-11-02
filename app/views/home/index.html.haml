@@ -1,1 +1,8 @@
-%h2 Hello World!
+%h2
+  - if brewer_signed_in?
+    - if current_brewer.is_admin?
+      It looks like you're an admin. Good for you!
+    - else
+      Look at you! You've got a brewer account!
+  - else
+    Welcome to the 8-bit Brewing Co.

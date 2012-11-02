@@ -5,4 +5,9 @@ module ApplicationHelper
 
   def is_admin?
   end
+
+  # TODO: Fix this
+  def link_button(title, link, options = [])
+    link_to(title, link, options)
+  end
 end

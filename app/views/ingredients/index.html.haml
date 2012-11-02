@@ -1,25 +1,28 @@
 %h1 Ingredients
 
-%table
-  %tr
-    %th Step
-    %th Type
-    %th Name
-    %th Notes
-    %th
-    %th
-    %th
+= link_to 'Add a new Ingredient', new_ingredient_path, class: 'button'
 
-  - @ingredients.each do |ingredient|
-    %tr
-      %td= ingredient.step_id
-      %td= ingredient.type
-      %td= ingredient.name
-      %td= ingredient.notes
-      %td= link_to 'Show', ingredient
-      %td= link_to 'Edit', edit_ingredient_path(ingredient)
-      %td= link_to 'Destroy', ingredient, :confirm => 'Are you sure?', :method => :delete
+- unless @ingredients.empty?
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Type
+        %th Notes
 
-%br
+        %th
 
-= link_to 'New Ingredient', new_ingredient_path
+    - @ingredients.each do |ingredient|
+      %tbody
+        %tr
+          %td= ingredient.name
+          %td= ingredient.type
+          %td= ingredient.notes
+          
+          %td
+            = link_to 'Edit', edit_ingredient_path(ingredient)
+            |
+            = link_to 'Destroy', ingredient, :confirm => 'Are you sure?', :method => :delete
+
+- else
+  %p There are no ingredients yet. <a href="#{new_ingredient_path}">Add a new ingredient</a>

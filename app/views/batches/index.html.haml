@@ -1,27 +1,27 @@
 %h1 Batches
 
-%table
-  %tr
-    %th Recipe
-    %th Abv
-    %th Notes
-    %th Rating
-    %th Starred
-    %th Starting gravity
-    %th
-    %th
-    %th
+= link_to 'Start a new Batch', new_batch_path, class: 'button'
 
-  - @batches.each do |batch|
-    %tr
-      %td= batch.recipe_id
-      %td= batch.abv
-      %td= batch.notes
-      %td= batch.rating
-      %td= batch.starred
-      %td= batch.starting_gravity
-      %td= link_to 'Show', batch
-      %td= link_to 'Edit', edit_batch_path(batch)
-      %td= link_to 'Destroy', batch, :confirm => 'Are you sure?', :method => :delete
+- unless @batches.empty?
+  %table
+    %thead
+      %tr
+        %th Recipe
+        %th Abv
+        %th Notes
+        
+        %th
 
-%br
+    - @batches.each do |batch|
+      %tbody
+        %tr
+          %td= batch.recipe_id
+          %td= batch.abv
+          %td= batch.notes
+
+          %td.nowrap
+            = link_to 'Edit', edit_batch_path(batch)
+            |
+            = link_to 'Destroy', batch, :confirm => 'Are you sure?', :method => :delete
+- else
+  %p You haven't brewed any batches yet. <a href="#{new_batch_path}">Start brewing!</a>
