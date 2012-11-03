@@ -43,9 +43,8 @@ ActiveRecord::Schema.define(:version => 20121101020526) do
   add_index "brewers", ["reset_password_token"], :name => "index_brewers_on_reset_password_token", :unique => true
 
   create_table "ingredients", :force => true do |t|
-    t.integer  "step_id"
-    t.string   "type"
     t.string   "name"
+    t.string   "ingredient_type"
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"

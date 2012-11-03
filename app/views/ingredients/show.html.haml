@@ -1,18 +1,16 @@
-%p#notice= notice
+%h1 Ingredients
 
-%p
-  %b Step:
-  = @ingredient.step_id
-%p
-  %b Type:
-  = @ingredient.type
-%p
-  %b Name:
-  = @ingredient.name
-%p
-  %b Notes:
-  = @ingredient.notes
+%h2= @ingredient.name
 
-= link_to 'Edit', edit_ingredient_path(@ingredient)
-\|
-= link_to 'Back', ingredients_path
+.row
+  .spans2.align-right
+    %strong Type:
+  .spans14= @ingredient.ingredient_type
+
+.row
+  .spans2.align-right
+    %strong Notes:
+  .spans14= @ingredient.notes
+
+.row
+  .spans14-offset2= link_to 'Edit', edit_ingredient_path(@ingredient)

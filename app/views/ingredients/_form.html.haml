@@ -9,8 +9,12 @@
   = f.label :name
   = f.text_field :name
 
-  = f.label :type
-  = f.text_field :type
+  %ul.inline-input-list
+    - ingredient_types.each do |type_name|
+      %li
+        %label
+          = f.radio_button :ingredient_type, type_name
+          = type_name
 
   = f.label :notes
   = f.text_area :notes
