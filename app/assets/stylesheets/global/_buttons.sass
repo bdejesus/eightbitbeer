@@ -5,19 +5,24 @@ input[type="button"], input[type="submit"], button
   display: inline-block
   padding: 7px 20px 6px
   text-align: center
-  background: #333
-  color: #FFF
+  color: #333
   border: none
   opacity: 0.9
   font-weight: $regular
-  @include box-shadow((inset 1px 1px 0px rgba(255,255,255,0.5), inset -1px -1px 0px #000))
-  @include transition(all 0.1s linear)
   vertical-align: baseline
   margin: 0.2em 0
   line-height: 1.2em
+  @include box-shadow((inset 1px 1px 0px rgba(255,255,255,0.5), inset -1px -1px 0px #CCC))
+  @include transition(all 0.05s linear)
+  @include gradient(#EEE, #DDD)
   &:hover
     opacity: 1
     text-decoration: none
+    @include box-shadow((inset 2px 2px 1px rgba(255,255,255,0.5), inset -2px -2px 1px #CCC))
+  &:active
+    color: #999
+    @include gradient(#DDD, #EEE)
+    @include box-shadow((inset -2px -2px 1px rgba(255,255,255,0.5), inset 2px 2px 1px #CCC))
   &.minimal
     background: #EEE
     color: #333

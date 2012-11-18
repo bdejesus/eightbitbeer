@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_filter :authenticate_brewer!, except: [:index, :show]
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.order('name ASC')
   end
 
   def show

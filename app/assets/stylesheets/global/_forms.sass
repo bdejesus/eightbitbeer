@@ -1,18 +1,15 @@
 // Forms
 form
   margin: 1em 0
+.field
+  margin: $global-margin 0
 label, .label
   font-weight: $regular
   color: #999
-  display: block
-  margin-top: $global-margin
+  display: inline-block
+  position: relative
+  z-index: 1
   @include disable-selection
-input, textarea
-  width: 240px
-  &.small
-    width: 60px
-  &.medium
-    width: 120px
 input
   &[type="checkbox"], &[type="radio"], &[type="submit"], &[type="button"]
     height: auto
@@ -21,21 +18,25 @@ input
     margin-right: 5px
 textarea, input[type="text"], input[type="email"], input[type="url"], input[type="number"], input[type="password"], select
   background: #FFF
-  border: 1px solid #DFDFDF
+  border: 1px solid #EEE
+  border-left-color: #DDD
+  border-top-color: #DDD
   padding: 5px
+  margin: 0
   @include transition(border-color 0.1s linear)
   &:focus
-    border-color: #333
     outline: none
+    border-color: #CCC
   &.tiny
-    width: $global-margin * 3
+    max-width: $global-margin * 3
   &.small
-    width: $global-margin * 6
+    max-width: $global-margin * 6
   &.medium
-    width: $global-margin * 12
+    max-width: $global-margin * 12
   &.long
-    width: $global-margin * 24
-
+    max-width: $global-margin * 24
+select:hover
+  cursor: pointer
 textarea
   height: 8.4em
 .input-list, .inline-input-list
@@ -56,9 +57,9 @@ textarea
   + .inline-input-list, + .input-list
     margin-top: 0
 .inline-inputs
-  > span
+  > .field
     display: inline-block
-    margin-right: $global-margin
+    margin: 0 $global-margin 0 0
   input
     margin-right: 5px
   input[type="submit"], input[type="button"], button

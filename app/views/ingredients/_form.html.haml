@@ -5,9 +5,10 @@
       %ul
         - @ingredient.errors.full_messages.each do |msg|
           %li= msg
-
-  = f.label :name
-  = f.text_field :name
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name, class: 'h3'
 
   %ul.inline-input-list
     - ingredient_types.each do |type_name|
@@ -16,8 +17,10 @@
           = f.radio_button :ingredient_type, type_name
           = type_name
 
-  = f.label :notes
-  = f.text_area :notes
-  
+  .field
+    = f.label :notes
+    %br/
+    = f.text_area :notes
+
   .actions
     = f.submit 'Save'

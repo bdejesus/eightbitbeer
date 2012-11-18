@@ -1,6 +1,6 @@
 %h1 Recipes
 
-= link_to 'Create a new Recipe', new_recipe_path, class: 'button'
+.actions= link_to 'Create a new Recipe', new_recipe_path, class: 'button'
 
 - unless @recipes.empty?
   %table
@@ -11,7 +11,7 @@
         %th ABV
         %th Yield
         %th Description
-        
+
         %th
 
     - @recipes.each do |recipe|

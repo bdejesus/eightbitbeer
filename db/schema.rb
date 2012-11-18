@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20121101020526) do
   create_table "steps", :force => true do |t|
     t.integer  "recipe_id"
     t.integer  "ingredient_id"
-    t.string     "step_type"
+    t.string   "step_type"
     t.float    "amount"
     t.time     "duration"
     t.text     "notes"

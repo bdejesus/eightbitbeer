@@ -7,14 +7,17 @@ table
   tbody tr
     @include transition(background-color 0.1s linear)
     &:hover
-      background: #F9F9F9
+      background: #F0F0F0
   th
-    background: #333
-    color: #F4F4F4
+    background: #F0F0F0
+    color: #999
     font-weight: $regular
     text-align: left
     white-space: nowrap
     padding: 6px 10px
+    border-left: 1px dotted #FFF
+    &:first-child
+      border-left: none
   th, td
     vertical-align: top
     min-width: 60px
@@ -22,8 +25,12 @@ table
       text-align: right
   td
     padding: 10px
-    border-bottom: 1px solid #EEE
+    border-bottom: 1px solid #F0F0F0
+    border-left: 1px dotted #F0F0F0
     @include gradient-stop(rgba(255,255,255,1), 1%, rgba(255,255,255,0), 2%)
+    &:first-child
+      border-left: none
+
   // Dense table
   &.dense
     th, td

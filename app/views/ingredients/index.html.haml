@@ -1,28 +1,23 @@
 %h1 Ingredients
 
-= link_to 'Add a new Ingredient', new_ingredient_path, class: 'button'
+.actions= link_to 'Add a new Ingredient', new_ingredient_path, class: 'button'
 
-- unless @ingredients.empty?
-  %table
-    %thead
-      %tr
-        %th Name
-        %th Type
-        %th Notes
+- unless @grains.empty?
+  %h2= t('grains')
+  = render 'table', ingredients: @grains
 
-        %th
+- unless @grains.empty?
+  %h2= t('malts')
+  = render 'table', ingredients: @malts
 
-    - @ingredients.each do |ingredient|
-      %tbody
-        %tr
-          %td= ingredient.name
-          %td= ingredient.type
-          %td= ingredient.notes
-          
-          %td
-            = link_to 'Edit', edit_ingredient_path(ingredient)
-            |
-            = link_to 'Destroy', ingredient, :confirm => 'Are you sure?', :method => :delete
+- unless @grains.empty?
+  %h2= t('hops')
+  = render 'table', ingredients: @hops
 
-- else
-  %p There are no ingredients yet. <a href="#{new_ingredient_path}">Add a new ingredient</a>
+- unless @grains.empty?
+  %h2= t('yeast')
+  = render 'table', ingredients: @yeast
+
+- unless @grains.empty?
+  %h2= t('other')
+  = render 'table', ingredients: @other

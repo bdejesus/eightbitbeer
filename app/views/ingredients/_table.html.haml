@@ -1,0 +1,18 @@
+%table
+  %thead
+    %tr
+      %th Name
+      %th Notes
+
+      %th
+
+  - ingredients.each do |ingredient|
+    %tbody
+      %tr
+        %td= ingredient.name
+        %td= ingredient.notes
+
+        %td
+          = link_to 'Edit', edit_ingredient_path(ingredient)
+          |
+          = link_to 'Destroy', ingredient, :confirm => 'Are you sure?', :method => :delete
