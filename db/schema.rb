@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121101020526) do
+ActiveRecord::Schema.define(:version => 20121118203254) do
 
   create_table "batches", :force => true do |t|
     t.integer  "recipe_id"
@@ -48,6 +48,11 @@ ActiveRecord::Schema.define(:version => 20121101020526) do
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "ingredients_steps", :force => true do |t|
+    t.integer "step_id"
+    t.integer "ingredient_id"
   end
 
   create_table "log_entries", :force => true do |t|

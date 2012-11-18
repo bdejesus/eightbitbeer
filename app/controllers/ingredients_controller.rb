@@ -8,11 +8,6 @@ class IngredientsController < ApplicationController
     @hops   = Ingredient.hops
     @yeast  = Ingredient.yeast
     @other  = Ingredient.other
-
-  end
-
-  def show
-    @ingredient = Ingredient.find(params[:id])
   end
 
   def new
@@ -27,7 +22,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.new(params[:ingredient])
 
     if @ingredient.save
-      redirect_to @ingredient, notice: 'Ingredient was successfully created.'
+      redirect_to ingredients_path, notice: 'Ingredient was successfully created.'
     else
       render action: "new"
     end
@@ -37,7 +32,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
 
     if @ingredient.update_attributes(params[:ingredient])
-      redirect_to @ingredient, notice: 'Ingredient was successfully updated.'
+      redirect_to ingredients_path, notice: 'Ingredient was successfully updated.'
     else
       render action: "edit"
     end

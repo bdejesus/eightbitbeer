@@ -13,6 +13,9 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     step = @recipe.steps.build
+    step.ingredients.build
+
+
   end
 
   def edit
