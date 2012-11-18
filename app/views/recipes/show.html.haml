@@ -1,16 +1,16 @@
-.row
-  .spans2.align-right
-    %strong Name
-  .spans14= @recipe.name
+%h1= @recipe.name
+%h2.h3= @recipe.description
 
 .row
   .spans2.align-right
     %strong Style
   .spans14= @recipe.style
+
 .row
   .spans2.align-right
-    %strong Description:
-  .spans14= @recipe.description
+    %strong Type
+  .spans14= @recipe.beer_type
+
 .row
   .spans2.align-right
     %strong Abv:
@@ -24,5 +24,11 @@
     %strong Notes:
   .spans14= @recipe.notes
 
+%h2 Steps
+
 .row
+  - @steps.each do |step|
+    = step.step_type
+
+.section.row
   .spans14.offset2= link_to 'Edit', edit_recipe_path(@recipe), class: 'button'

@@ -6,26 +6,52 @@
         - @recipe.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :style
-    = f.text_field :style
-  .field
-    = f.label :type
-    = f.text_field :type
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :abv
-    = f.text_field :abv
-  .field
-    = f.label :batch_size
-    = f.text_field :batch_size
-  .field
-    = f.label :notes
-    = f.text_area :notes
+
+  = f.label :name
+  = f.text_field :name
+
+  = f.label :style
+  = f.text_field :style
+
+  = f.label :beer_type
+  %ul.inline-input-list
+    = f.select(:beer_type, beer_types)
+
+  = f.label :description
+  = f.text_area :description
+
+  = f.label :abv
+  = f.text_field :abv
+
+  = f.label :batch_size
+  = f.text_field :batch_size
+
+  = f.label :notes
+  = f.text_area :notes
+
+  %fieldset
+    %h3 Steps
+    = f.fields_for :steps do |f|
+
+      = f.label :step_type
+      = f.text_area :step_type
+
+      = f.label :amount
+      = f.text_field :amount
+
+      = f.label :duration
+      = f.time_select :duration
+
+      = f.label :notes
+      = f.text_area :notes
+
+      = f.label :temperature
+      = f.text_field :temperature
+
+
+
+
   .actions
     = f.submit 'Save'
+
+

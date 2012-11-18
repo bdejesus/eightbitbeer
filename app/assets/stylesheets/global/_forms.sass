@@ -2,10 +2,10 @@
 form
   margin: 1em 0
 label, .label
-  font-weight: $bold
+  font-weight: $regular
   color: #999
   display: block
-  margin-top: 0.5em
+  margin-top: $global-margin
   @include disable-selection
 input, textarea
   width: 240px
@@ -36,6 +36,8 @@ textarea
 .input-list
   li:first-child
     margin-top: 0
+  label
+    margin: $global-margin/2 0 0
 .inline-input-list
   li
     display: inline-block
@@ -53,3 +55,8 @@ textarea
   input[type="submit"], input[type="button"], button
     margin: 0 0 0 3px
     vertical-align: bottom
+
+fieldset
+  border: none
+  border-top: 1px solid #DDD
+  margin: 20px 0

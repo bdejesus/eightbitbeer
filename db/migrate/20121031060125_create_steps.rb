@@ -2,7 +2,8 @@ class CreateSteps < ActiveRecord::Migration
   def change
     create_table :steps do |t|
       t.integer :recipe_id
-      t.text :type
+      t.integer :ingredient_id
+      t.text :step_type
       t.float :amount
       t.time :duration
       t.text :notes
