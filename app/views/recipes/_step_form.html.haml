@@ -1,0 +1,18 @@
+= f.label :step_type
+= f.text_field :step_type
+
+.inline-inputs
+  %span
+    = f.label 'Amt'
+    = f.number_field :amount, class: 'tiny'
+  %span
+    = f.label 'Temp'
+    = f.number_field :temperature, class: 'tiny'
+  %span
+    = f.label :duration
+    = f.time_select :duration
+
+= f.label :notes
+= f.text_area :notes, class: 'long'
+
+

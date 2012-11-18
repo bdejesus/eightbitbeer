@@ -27,6 +27,14 @@ textarea, input[type="text"], input[type="email"], input[type="url"], input[type
   &:focus
     border-color: #333
     outline: none
+  &.tiny
+    width: $global-margin * 3
+  &.small
+    width: $global-margin * 6
+  &.medium
+    width: $global-margin * 12
+  &.long
+    width: $global-margin * 24
 
 textarea
   height: 8.4em
@@ -50,6 +58,7 @@ textarea
 .inline-inputs
   > span
     display: inline-block
+    margin-right: $global-margin
   input
     margin-right: 5px
   input[type="submit"], input[type="button"], button
@@ -59,4 +68,8 @@ textarea
 fieldset
   border: none
   border-top: 1px solid #DDD
-  margin: 20px 0
+  margin: $global-margin 0
+  padding: 0
+
+.hidden-setting
+  display: none

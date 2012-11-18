@@ -1,1 +1,30 @@
-_buttons.sass
+// Buttons
+input[type="button"], input[type="submit"], button
+  height: 28px
+.button:link, .button:visited, button, input[type="button"], input[type="submit"]
+  display: inline-block
+  padding: 7px 20px 6px
+  text-align: center
+  background: #333
+  color: #FFF
+  border: none
+  opacity: 0.9
+  font-weight: $regular
+  @include box-shadow((inset 1px 1px 0px rgba(255,255,255,0.5), inset -1px -1px 0px #000))
+  @include transition(all 0.1s linear)
+  vertical-align: baseline
+  margin: 0.2em 0
+  line-height: 1.2em
+  &:hover
+    opacity: 1
+    text-decoration: none
+  &.minimal
+    background: #EEE
+    color: #333
+    @include box-shadow(none)
+
+button, input[type="button"], input[type="submit"]
+  height: 30px
+  padding: 0 20px
+.clear + input[type="button"], input[type="submit"], button
+  margin-top: 14px

@@ -8,44 +8,49 @@
 
 
   = f.label :name
-  = f.text_field :name
-
-  = f.label :style
-  = f.select(:style, beer_styles)
-
-  = f.label :beer_type
-  = f.text_field :beer_type
+  = f.text_field :name, class: 'long'
 
   = f.label :description
-  = f.text_area :description
+  = f.text_area :description, class: 'long'
 
-  = f.label :abv
-  = f.text_field :abv
-
-  = f.label :batch_size
-  = f.text_field :batch_size
-
-  = f.label :notes
-  = f.text_area :notes
+  .inline-inputs
+    %span
+      = f.label :style
+      = f.select(:style, beer_styles)
+    %span
+      = f.label :batch_size
+      = f.number_field :batch_size, class: 'tiny', min: 1, max: 99
+      %abbr{title: 'Gallons'} gals.
 
   %fieldset
-    %h3 Steps
-    = f.fields_for :steps do |f|
-
-      = f.label :step_type
-      = f.text_area :step_type
-
-      = f.label :amount
-      = f.text_field :amount
-
-      = f.label :duration
-      = f.time_select :duration
-
+    %p= link_to 'Add a note', '#recipe-notes', class: 'minimal button expand-setting'
+    #recipe-notes.hidden-setting
       = f.label :notes
-      = f.text_area :notes
+      = f.text_area :notes, class: 'long'
 
-      = f.label :temperature
-      = f.text_field :temperature
+  %fieldset
+    %h2 The Mash
+    .section
+      %p= link_to 'Add Water Treatment', '', class: 'minimal button'
+
+    .section
+      = f.fields_for :steps do |builder|
+        = render 'step_form', f: builder
+      %p= link_to 'Add Grains/Malt', '', class: 'minimal button'
+
+    .section
+      %p= link_to 'Add Additional Ingredients', '', class: 'minimal button'
+  %fieldset
+    %h2 Hops
+    %h3 Bittering
+    %h3 Aroma
+  %fieldset
+    %h2 Fermenting
+  %fieldset
+    %h2 Racking
+  %fieldset
+    %h2 Bottling
+
 
 
 

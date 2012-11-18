@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @recipe.steps.build
+    step = @recipe.steps.build
   end
 
   def edit
