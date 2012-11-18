@@ -1,5 +1,5 @@
 module RecipesHelper
-  def beer_types
+  def beer_styles
     return Array[
       'Pale Ale',
       'Amber Ale',
