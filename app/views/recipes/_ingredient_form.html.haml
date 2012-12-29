@@ -1,0 +1,11 @@
+.field
+  = f.label :name
+  %br/
+  = f.text_field :name
+
+%ul.inline-input-list
+  - ingredient_types.each do |type_name|
+    %li
+      %label
+        = f.radio_button :ingredient_type, type_name
+        = type_name

@@ -12,10 +12,11 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    step = @recipe.steps.build
-    step.ingredients.build
-
-
+    steps = Recipe::StepTypes::TYPES
+    steps.each do |step_name|
+      step = @recipe.steps.build
+      step.step_type = step_name
+    end
   end
 
   def edit

@@ -24,9 +24,13 @@ input[type="button"], input[type="submit"], button
     @include gradient(#DDD, #EEE)
     @include box-shadow((inset -2px -2px 1px rgba(255,255,255,0.5), inset 2px 2px 1px #CCC))
   &.minimal
-    background: #EEE
+    background: #F6F6F6
+    border: 1px solid #EEE
     color: #333
     @include box-shadow(none)
+    &:hover
+      @include gradient(#EEE, #DDD)
+      border-color: #CCC
 
 button, input[type="button"], input[type="submit"]
   height: 30px

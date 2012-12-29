@@ -33,28 +33,13 @@
       = f.label :notes
       = f.text_area :notes, class: 'long'
 
-  %fieldset
-    %h2 The Mash
-    .section
-      %p= link_to 'Add Water Treatment', '', class: 'minimal button'
+  = f.fields_for :steps do |builder|
 
-    .section
-      = f.fields_for :steps do |builder|
-        = render 'step_form', f: builder
-      %p= link_to 'Add Grains/Malt', '', class: 'minimal button'
+    %fieldset
+      = render 'step_form', f: builder
 
-    .section
-      %p= link_to 'Add Additional Ingredients', '', class: 'minimal button'
-  %fieldset
-    %h2 Hops
-    %h3 Bittering
-    %h3 Aroma
-  %fieldset
-    %h2 Fermenting
-  %fieldset
-    %h2 Racking
-  %fieldset
-    %h2 Bottling
+
+
 
 
 

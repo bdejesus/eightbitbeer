@@ -7,4 +7,15 @@ class Recipe < ActiveRecord::Base
   validates_uniqueness_of :name
 
   accepts_nested_attributes_for :steps, :allow_destroy => true
+
+  module StepTypes
+    TYPES = [
+      'Mash',
+      'Bittering',
+      'Aroma',
+      'Fermeting',
+      'Racking',
+      'Bottling'
+    ]
+  end
 end

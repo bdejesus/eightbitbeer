@@ -26,9 +26,11 @@
 
 %h2 Steps
 
-.row
-  - @steps.each do |step|
-    = step.step_type
+
+- @steps.each do |step|
+  .row
+    %h3.h4= step.step_type
+    = step.notes
 
 .section.row
   .spans14.offset2= link_to 'Edit', edit_recipe_path(@recipe), class: 'button'
