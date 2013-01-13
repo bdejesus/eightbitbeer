@@ -12,4 +12,8 @@ module RecipesHelper
       'Lager'
     ]
   end
+
+  def has_ingredients?
+    return true
+  end
 end

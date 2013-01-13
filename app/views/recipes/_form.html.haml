@@ -34,7 +34,6 @@
       = f.text_area :notes, class: 'long'
 
   = f.fields_for :steps do |builder|
-
     %fieldset
       = render 'step_form', f: builder
 

@@ -36,6 +36,10 @@ footer
   margin: $global-margin * 2 0
 .actions
   margin: $global-margin 0
+.float-right
+  float: right
+.float-left
+  float: left
 
 // Lists
 ul, ol
@@ -45,6 +49,42 @@ ul, ol
     padding-left: 0
 ul
   list-style: square
+
+// Components
+
+// Dropdown
+.dropdown
+  display: inline-block
+  position: relative
+  border: 1px solid #DDD
+  @include gradient(#F9F9F9, #EEE)
+  .selection
+    display: inline-block
+    padding: 4px 10px
+  .options
+    display: none
+    list-style: none
+    padding: 1px
+    margin: 0
+    position: absolute
+    background: #FFF
+    width: 100%
+    border: 1px solid #DDD
+    margin-left: -1px
+    z-index: 2
+  li
+    display: block
+    padding: 4px 8px
+    &:hover
+      background: rgba(0,0,0,0.2)
+      color: #FFF
+  &:hover
+    cursor: pointer
+    @include gradient(#FFF, #EEE)
+  &:focus, &:active, &.active
+    @include gradient(#EEE, #F9F9F9)
+    .options
+      display: block
 
 // Misc
 .clear

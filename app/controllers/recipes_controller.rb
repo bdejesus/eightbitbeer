@@ -16,6 +16,9 @@ class RecipesController < ApplicationController
     steps.each do |step_name|
       step = @recipe.steps.build
       step.step_type = step_name
+      3.times do
+        step.ingredients.build
+      end
     end
   end
 

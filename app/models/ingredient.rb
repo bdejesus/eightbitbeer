@@ -1,5 +1,7 @@
 class Ingredient < ActiveRecord::Base
+  has_and_belongs_to_many :recipes
   has_and_belongs_to_many :steps
+
   validates_presence_of :name, :ingredient_type
   validates_uniqueness_of :name
 

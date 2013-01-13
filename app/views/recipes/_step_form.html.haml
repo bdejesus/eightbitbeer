@@ -1,6 +1,6 @@
 %h3= f.text_field :step_type, class: 'minimal', disabled:'disabled'
-
 = f.hidden_field :step_type
+
 .inline-inputs
   .field
     = f.label 'Amt'
@@ -19,3 +19,10 @@
   = f.label :notes
   %br/
   = f.text_area :notes, class: 'long'
+
+%fieldset
+  %p= link_to 'Add ingredients', '#ingredients-list', class: 'minimal button expand-setting'
+  #ingredients-list.hidden-setting
+    %h5 Ingredients
+    = f.fields_for :ingredients do |builder|
+      = render 'ingredient_form', f: builder
